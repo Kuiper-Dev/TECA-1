@@ -15,15 +15,19 @@ export class ExpandComponent implements OnInit {
   Ampliar(){
     if(this.isActivo){
       var p = document.getElementById("principal");
-      p.classList.remove("principalA");
+      p.style.width = ""
+      p.style.height = ""
       var r = document.getElementById("row-A");
-      r.classList.remove("row-A");
+      r.style.width = ""
+      r.style.height = ""
       this.isActivo = false;
     }else{
       var p = document.getElementById("principal");
-      p.className += " principalA"
+      p.style.width = "100%"
+      p.style.height = "100%"
       var r = document.getElementById("row-A");
-      r.className += " row-A"
+      r.style.width = "100%"
+      r.style.height = "100%"
       this.isActivo = true;
     }
   }

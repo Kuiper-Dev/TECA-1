@@ -30,7 +30,8 @@ export class RegisterService {
         email: user.email,
         password: user.password,
         type: user.type,
-        avatar: user.avatar
+        avatar: user.avatar,
+        keyPush: user.keyPush
       }).then(res =>{
         resolve(res);
       }).catch(err => rejected(err));

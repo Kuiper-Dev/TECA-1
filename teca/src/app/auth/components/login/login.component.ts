@@ -1,9 +1,10 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { NavController } from '@ionic/angular';
+import { AlertController, NavController} from '@ionic/angular';
 import { AuthService } from '../../services/auth.service';
 import {UserService} from '../../services/user.service';
 import { User } from '../../../models/user';
 import { Router } from '@angular/router';
+import { NotificationPushService } from '../../../services/notification-push.service';
 
 @Component({
   selector: 'app-login',
@@ -24,7 +25,10 @@ export class LoginComponent implements OnInit {
     private userService: UserService,
     private authService: AuthService,
     private route: Router,
-  ) { }
+    private messagingService: NotificationPushService
+  ) { 
+   
+  }
 
   ngOnInit() {}
 
@@ -40,7 +44,7 @@ export class LoginComponent implements OnInit {
     
     console.log('Estas en el login Firebase');
     this.authService.login(this.newUser.email, this.newUser.password).then(res => {
-      this.userService.getUsuario(localStorage.getItem('token')).subscribe(mycurrentUser => {
+     this.userService.getUsuario(localStorage.getItem('token')).subscribe(mycurrentUser => {
         const currentUser = mycurrentUser as User;
         localStorage.setItem('usuario', JSON.stringify(currentUser));
         localStorage.setItem('userType', currentUser.type);
@@ -51,6 +55,11 @@ export class LoginComponent implements OnInit {
         } else {
           this.navCtrl.navigateForward('/principal');
         }
+
+        this.messagingService.requestPermission().subscribe(
+          async token => {
+            this.userService.setTokenId(token)
+          });
       });
     }).catch(err => console.log('Error de Acceso') );
     

@@ -64,6 +64,10 @@ const routes: Routes = [
     path: 'actividades',
     loadChildren: () => import('./pages/actividades/actividades.module').then( m => m.ActividadesPageModule)
   },
+  {
+    path: 'home',
+    loadChildren: () => import('./pages/home/home.module').then( m => m.HomePageModule)
+  },
 ];
 
 @NgModule({

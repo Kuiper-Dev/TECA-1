@@ -5,8 +5,8 @@
     </ion-col>
     <ion-col>
       <app-free-panel (freePanelEvent)="newActivity($event)" *ngIf="visiblePanel"></app-free-panel>
-      <app-theme-editor [themeDataInfo]="newTheme" (themeEditorEvent)="reading()" *ngIf="visibleTheme"></app-theme-editor>
-      <app-reflective-reading [textReading]="newTheme" (readingEvent)="start()" (keywordsEvent)="loadKeywords($event)" *ngIf="visibleReading"></app-reflective-reading>
+      <app-theme-editor [themeDataInfo]="newTheme" (themeEditorEvent)="reading" *ngIf="visibleTheme"></app-theme-editor>
+      <app-reflective-reading [textReading]="newTheme" (readingEvent)="start" (keywordsEvent)="loadKeywords($event)" *ngIf="visibleReading"></app-reflective-reading>
       <app-start-activity [keywordsActivity]="this.myKeywords" *ngIf="visibleActivity"></app-start-activity>
     </ion-col>
   </ion-row>

@@ -6,9 +6,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./student-panel.component.scss'],
 })
 export class StudentPanelComponent implements OnInit {
-
+  key = "no tiene "
   constructor() { }
 
-  ngOnInit() {}
+  ngOnInit() {
 
+    if(localStorage.getItem('TK')) this.key = localStorage.getItem('TK')
+
+  }
+  
+ 
 }

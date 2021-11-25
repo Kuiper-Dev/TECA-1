@@ -20,6 +20,11 @@ import {FormsModule} from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { PipesModule } from './pipes/pipes.module';
+import { ServiceWorkerModule } from '@angular/service-worker';
+
+import { AngularFireMessagingModule } from '@angular/fire/messaging';
+
+
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
@@ -28,12 +33,14 @@ import { PipesModule } from './pipes/pipes.module';
     , IonicModule.forRoot()
     , AppRoutingModule
     , AngularFireModule.initializeApp(firebaseConfig)
+    , AngularFireMessagingModule
     , AngularFireAuthModule, BrowserAnimationsModule
     , MatTableModule,
     MatInputModule,
     MatButtonModule,
     FormsModule,
-    PipesModule],
+    PipesModule,
+    ServiceWorkerModule.register('combined-sw.js', { enabled: true})],
   providers: [
     StatusBar,
     SplashScreen,

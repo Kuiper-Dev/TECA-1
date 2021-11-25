@@ -3,6 +3,7 @@ import { AlertController } from '@ionic/angular';
 import { KeyScheme } from '../../../models/key-scheme';
 import { BleedingScheme } from '../../../models/bleeding-scheme';
 import { TreeScheme } from '../../../models/tree-scheme';
+import {UserService} from '../../../../auth/services/user.service';
 @Component({
   selector: 'app-scheme',
   templateUrl: './scheme.component.html',
@@ -16,7 +17,7 @@ export class SchemeComponent implements OnInit {
   visibleKeys=true;
   visibleBleeding=false;
   visibleTree=false;
-  constructor(public alertController: AlertController) { }
+  constructor(public alertController: AlertController, private userService: UserService,) { }
 
   ngOnInit() {
     console.log('Este es el cuadro que selecciioné');
@@ -74,16 +75,21 @@ export class SchemeComponent implements OnInit {
 
   async presentAlert() {
     const alert = await this.alertController.create({
-    
       cssClass: 'custom-alertDanger',
-      
       message: 'Espera mientras es revisado',
       buttons: ['OK']
     });
 
     await alert.present();
-
+    this.enviarNotificacionP()
     const { role } = await alert.onDidDismiss();
     console.log('onDidDismiss resolved with role', role);
+  }
+  enviarNotificacionP() {
+    var actividad = this.activitySelected
+    var id = this.activity["profesorId"]
+    var profesor = this.userService.getUsuario(id)
+    //var  key = profesr
+    
   }
 }

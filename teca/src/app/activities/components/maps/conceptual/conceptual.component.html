@@ -1,12 +1,11 @@
-<div class="principal"  >
+<div class="principal"   id="principal" >
   <ion-content  style="height: 100%; width:100%">
+    <app-expand></app-expand>
     <div #principal style="height: 100%; width:100%">
         <div *ngFor="let node of nodes ; let i = index" style="display: inline-block" cdkDrag [id]="node.id"></div> 
     </div>
   </ion-content>
 </div>
-
-
 
 
 <ng-template #myngfor>

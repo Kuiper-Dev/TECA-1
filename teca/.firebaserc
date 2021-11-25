@@ -1,5 +1,7 @@
 {
   "projects": {
-    "default": "teca-e566a"
-  }
+    "default": "teca-e566a",
+    "teca": "teca-e566a"
+  },
+  "targets": {}
 }

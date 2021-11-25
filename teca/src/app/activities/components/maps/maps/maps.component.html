@@ -11,9 +11,12 @@
         ></app-activity-header>
       </ion-row>
 
-      <ion-row  size="auto" id="row-A"> 
+      <ion-row size="auto" id="row-A">
         <app-mental class="areaCuadro" *ngIf="visibleMental"></app-mental>
-        <app-conceptual class="areaCuadro" *ngIf="visibleConseptual"></app-conceptual>
+        <app-conceptual
+          class="areaCuadro"
+          *ngIf="visibleConseptual"
+        ></app-conceptual>
       </ion-row>
       <ion-row>
         <ion-col>
@@ -21,7 +24,8 @@
         </ion-col>
         <ion-col>
           <ion-button shape="round" color="atomik" (click)="saveActivity()"
-            >Enviar a revisión</ion-button>
+            >Enviar a revisión</ion-button
+          >
         </ion-col>
       </ion-row>
     </ion-col>

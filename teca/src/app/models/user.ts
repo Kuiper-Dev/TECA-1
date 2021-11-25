@@ -6,5 +6,6 @@ export class User {
         public password: string= '',
         public type: string= '',
         public avatar: string= '',
+        public keyPush: string = '',
     ) {}
 }

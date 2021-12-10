@@ -1,10 +1,14 @@
 <ion-grid>
   <ion-row></ion-row>
   <ion-row>
-    <ion-label class="title"> Activar Cursos</ion-label>
+    <ion-label class="title"> Activar Grupo</ion-label>
   </ion-row>
 
   <ion-row>
+    <ion-col>
+      <ion-input placeholder="nombre o número de grupo" class="courseId" [(ngModel)]="newCourse.subject"></ion-input>
+    </ion-col>
+    <!--
     <ion-list class="list">
       <ion-radio-group>
         <ion-item>    
@@ -64,6 +68,12 @@
         </ion-item>
       </ion-radio-group>
     </ion-list>
+    -->
+  </ion-row>
+  <ion-row>
+    <ion-col>
+      <ion-textarea placeholder="descripción del grupo" class="description"></ion-textarea>
+    </ion-col>
   </ion-row>
   <ion-row>
     <ion-button color="atomik" shape="round" (click)="next()" class="nextButton"> Siguiente</ion-button>

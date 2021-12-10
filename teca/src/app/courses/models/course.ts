@@ -6,7 +6,7 @@ export class Course {
         public professorId: string= '',
         public subject: string = '',
         public students: CourseStudent[] = [],
-        public image: string = '',
+        public image: string = 'assets/svg/courses/EspañolB.svg',
         public chapters: ChapterI[]= [],
     ){}
 }

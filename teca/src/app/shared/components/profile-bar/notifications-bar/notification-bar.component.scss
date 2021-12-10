@@ -1,0 +1,64 @@
+.box {
+  color: rgb(34, 36, 36);
+  border: 5px solid rgb(255, 255, 255);
+  position: fixed;
+  left: 1050px;
+  width: 290px;
+  top: 0px;
+}
+.boxAvatar {
+  color: rgb(34, 36, 36);
+  border: 5px solid rgb(255, 255, 255);
+  position: fixed;
+  left: 1285px;
+  width: 290px;
+  top: 0px;
+}
+.name {
+  font-family: Mulish;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 20px;
+  letter-spacing: 0.01em;
+}
+ion-icon {
+  font-size: 28px;
+  color: #768cff;
+}
+ion-badge {
+  font-size: 8px;
+}
+#notification-button {
+  position: relative;
+  width: 42px;
+  top: 1px;
+  right: 1px;
+
+  overflow: visible !important;
+}
+#cart-btn {
+  position: relative;
+}
+.avatar {
+  width: 44px;
+  height: 46.64px;
+  border-style: solid;
+  border-color: #5570ff;
+  border-radius: 15px;
+}
+#notifications-badge {
+  background-color: red;
+  position: absolute;
+  top: -3px;
+  right: -3px;
+  border-radius: 100%;
+}
+.nameSpace {
+  margin-top: 6.5vh;
+}
+.image {
+  margin-top: 9vh;
+  margin-left: 6.5625vw;
+  margin-right: 6.5625vw;
+}

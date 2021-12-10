@@ -24,6 +24,8 @@ import { ServiceWorkerModule } from '@angular/service-worker';
 
 import { AngularFireMessagingModule } from '@angular/fire/messaging';
 
+import { HttpClientModule } from '@angular/common/http';
+
 
 @NgModule({
   declarations: [AppComponent],
@@ -40,6 +42,7 @@ import { AngularFireMessagingModule } from '@angular/fire/messaging';
     MatButtonModule,
     FormsModule,
     PipesModule,
+    HttpClientModule,
     ServiceWorkerModule.register('combined-sw.js', { enabled: true})],
   providers: [
     StatusBar,

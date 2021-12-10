@@ -1,43 +1,47 @@
 <ion-grid class="principal">
   <div>
     <button id="notification-button" ion-button clear>
-        <ion-icon name="notifications-outline" color="primary">
-          <ion-badge id="notifications-badge" color="danger">5</ion-badge>
-        </ion-icon>              
+      <ion-icon name="notifications-outline" color="primary">
+        <ion-badge id="notifications-badge" color="danger">5</ion-badge>
+      </ion-icon>
     </button>
-</div>
-
+  </div>
 
   <ion-row>
-      <ion-col class="image">
-        <ion-img [src]="currentUser.avatar"  class="avatar"></ion-img>
-      </ion-col>
-    </ion-row>
-  
-    <ion-row class="nameSpace">
-      <ion-col class="ion-text-center">
-        <ion-label class="name">{{currentUser.name}}</ion-label>
-      </ion-col>
-    </ion-row>
-  
-    <ion-row class="personal">
-      <ion-col>
-        <app-student-data [email]="currentUser.email" [date]="currentStudent.date" [level]="currentStudent.level"></app-student-data>
-      </ion-col>
-    </ion-row>
-  
-    <ion-row class="reminder">
-      <ion-col>
-        <app-reminder></app-reminder>
-      </ion-col>
-    </ion-row>
-  
-    <ion-row class="logout">
-      <ion-col class="ion-text-center">
-        <ion-item color="profile" lines="none" (click)="logout()">
-          <ion-icon id="logoutIcon"></ion-icon>
-          <ion-label class="logoutText">Cerrar sesión</ion-label>
-        </ion-item>
-      </ion-col>
-    </ion-row>
-  </ion-grid>
+    <ion-col class="image">
+      <ion-img [src]="currentUser.avatar" class="avatar"></ion-img>
+    </ion-col>
+  </ion-row>
+
+  <ion-row class="nameSpace">
+    <ion-col class="ion-text-center">
+      <ion-label class="name">{{ currentUser.name }}</ion-label>
+    </ion-col>
+  </ion-row>
+
+  <ion-row class="personal">
+    <ion-col>
+      <app-student-data
+        [email]="currentUser.email"
+        [date]="currentStudent.date"
+        [level]="currentStudent.level"
+      ></app-student-data>
+    </ion-col>
+  </ion-row>
+
+  <ion-row class="reminder">
+    <ion-col>
+      <app-reminder></app-reminder>
+    </ion-col>
+  </ion-row>
+
+  <ion-row class="logout">
+    <ion-col class="ion-text-center">
+      <ion-item color="profile" lines="none" (click)="logout()">
+        <ion-icon id="logoutIcon"></ion-icon>
+        <ion-label class="logoutText">Cerrar sesión</ion-label>
+      </ion-item>
+    </ion-col>
+  </ion-row>
+</ion-grid>
+

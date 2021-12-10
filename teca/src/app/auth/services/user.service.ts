@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import {AngularFirestore} from '@angular/fire/firestore';
+import { studentList } from 'src/app/models/studentList';
 import { User } from '../../models/user';
 
 @Injectable({
@@ -28,6 +29,16 @@ export class UserService {
 
   // Aqui creo una funcion para enviar el tokenId 
   setTokenId(token:string){
+    console.log(token)
     this.db.collection('users').doc(localStorage.getItem('token')).update({'keyPush':token})
+  }
+
+  getProfessorID(){
+    return new Promise((resolve,rejected)=>{ 
+      this.db.collection('studentList').doc(localStorage.getItem('token')).get().toPromise().then( res=>{
+        const data = res.data() as studentList;
+        resolve(data.professorId)
+      }).catch(err=>rejected(err));
+    })
   }
 }

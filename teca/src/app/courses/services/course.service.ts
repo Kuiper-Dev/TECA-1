@@ -13,6 +13,7 @@ import { CourseStudent } from '../interfaces/course-student';
 import { CampaignI } from '../interfaces/campaign-i';
 import { Activity } from '../models/activity';
 import { ActivityI } from '../interfaces/activity-i';
+import { User } from '../../models/user';
 @Injectable({
   providedIn: 'root'
 })
@@ -165,7 +166,6 @@ export class CourseService {
       }).catch();
     });
   }
-
   
   async getChapter(chapterId: string){
     return this.db.collection('chapters').doc<Chapter>(chapterId).get().toPromise();

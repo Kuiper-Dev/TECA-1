@@ -14,12 +14,16 @@ export class ScoreService {
         studentId:scores.studentId,
         professorId:scores.professorId,
         name:scores.name,
-        español: scores.espaniol,
-        sociales: scores.sociales,
-        civica:scores.civica,
-        biologia:scores.biologia,
-        quimica:scores.quimica,
-        fisica:scores.fisica
+        analogias: scores.analogias,
+        cuadroCompratativo: scores.cuadroCompratativo,
+        esquemaArbol:scores.esquemaArbol,
+        esquemaSangrado:scores.esquemaSangrado,
+        mnemotecnicas:scores.mnemotecnicas,
+        sinonimosAntonimos:scores.sinonimosAntonimos,
+        esquemaLlaves:scores.esquemaLlaves,
+        mapaMental:scores.mapaMental,
+        mapaConceptual:scores.mapaConceptual
+
       }).then(res=>{
         resolve(res);
       }).catch(err=>{rejected(err)});

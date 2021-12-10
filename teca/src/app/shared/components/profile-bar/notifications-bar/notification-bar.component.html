@@ -1,0 +1,20 @@
+<ion-grid class="box">
+  <ion-col>
+
+    <button style="background-color: #ffffff !important" id="notifications-outline-btn">
+      <ion-icon name="notifications-outline"></ion-icon>
+      <ion-badge color="red " id="notifications-outline">1</ion-badge><!-- cantidad de notificaciones -->
+    </button>
+    <ion-label class="name">{{ currentUser.name }}</ion-label>
+
+
+
+  </ion-col>
+
+</ion-grid>
+
+<ion-grid class="boxAvatar">
+  <ion-img [src]="currentUser.avatar" class="avatar"></ion-img>
+
+
+</ion-grid>

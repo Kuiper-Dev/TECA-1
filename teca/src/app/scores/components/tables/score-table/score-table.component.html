@@ -4,70 +4,91 @@
       <ion-label class="title">Puntajes</ion-label>
     </ion-row>
     <ion-row class="table">
-      <ion-searchbar class="searchbar" (ionChange)="search($event)"></ion-searchbar>
-    </ion-row>
-    <ion-row class="table">
       <ion-col>
-        <ion-item lines=none>
-          <ion-label class="headers">Nombre</ion-label>
-          
-        </ion-item>
-      </ion-col>
-      <ion-col >
-        <ion-item lines=none>
-          <ion-label class="headers">Analogías</ion-label>
-    
-        </ion-item>
+        <ion-label class="headers">Nombre</ion-label>
       </ion-col>
       <ion-col>
-        <ion-item lines=none>
-          <ion-label class="headers">Sinónimos</ion-label>
-        </ion-item>
+        <ion-label class="headers">Analogías</ion-label>
       </ion-col>
       <ion-col>
-        <ion-item lines=none>
-          <ion-label class="headers">Compratativos</ion-label>
-        </ion-item>
+
+          <ion-label class="headers">Compratativo</ion-label>
+
       </ion-col>
       <ion-col>
-        <ion-item lines=none>
-          <ion-label class="headers">Mnemotecnias</ion-label>
-        </ion-item>
-      </ion-col>
-      <ion-col>
-        <ion-item lines=none>
+
           <ion-label class="headers">Árbol</ion-label>
-        </ion-item>
+
       </ion-col>
       <ion-col>
-        <ion-item lines=none>
+
+          <ion-label class="headers">Sangrado</ion-label>
+
+      </ion-col>
+      <ion-col>
+
+          <ion-label class="headers">Mnemotécnicas</ion-label>
+
+      </ion-col>
+      <ion-col>
+
+          <ion-label class="headers">Sinónimos</ion-label>
+
+      </ion-col>
+      <ion-col>
+
           <ion-label class="headers">Llaves</ion-label>
-        </ion-item>
+
+      </ion-col>
+      <ion-col>
+
+          <ion-label class="headers">Mental</ion-label>
+
+      </ion-col>
+      <ion-col>
+
+          <ion-label class="headers">Conceptual</ion-label>
+
       </ion-col>
     </ion-row>
     <ion-row class="table">
       <ion-grid class="ion-text-center">
-        <ion-row class="row" *ngFor="let score of scoresList | studentFilter: searchtext: 'name'">
+        <ion-row
+          class="row"
+          *ngFor="let score of scoresList | studentFilter: searchtext:'name'"
+        >
+
+  
           <ion-col>
-            <ion-label class="name">{{score.name}}</ion-label>
+            <ion-label class="name">{{ score.name }}</ion-label>
           </ion-col>
           <ion-col>
-            <ion-label class="grades">{{score.espaniol}}</ion-label>
+            
+            <ion-label class="grades">{{ score.analogias }}</ion-label>
           </ion-col>
           <ion-col>
-            <ion-label class="grades">{{score.sociales}}</ion-label>
+            <ion-label class="grades">{{ score.cuadroCompratativo }}</ion-label>
           </ion-col>
           <ion-col>
-            <ion-label class="grades">{{score.civica}}</ion-label>
+            <ion-label class="grades">{{ score.esquemaArbol }}</ion-label>
           </ion-col>
           <ion-col>
-            <ion-label class="grades">{{score.biologia}}</ion-label>
+            <ion-label class="grades">{{ score.esquemaSangrado }}</ion-label>
           </ion-col>
           <ion-col>
-            <ion-label class="grades">{{score.quimica}}</ion-label>
+            <ion-label class="grades">{{ score.mnemotecnicas }}</ion-label>
           </ion-col>
           <ion-col>
-            <ion-label class="grades">{{score.fisica}}</ion-label>
+            <ion-label class="grades">{{ score.sinonimosAntonimos }}</ion-label>
+          </ion-col>
+          <ion-col>
+            <ion-label class="grades">{{ score.esquemaLlaves }}</ion-label>
+          </ion-col>
+          <ion-col>
+            <ion-label class="grades">{{ score.mapaMental }}</ion-label>
+          </ion-col>
+          <ion-col>
+            <ion-label class="grades">{{ score.mapaConceptual }}</ion-label>
           </ion-col>
         </ion-row>
       </ion-grid>

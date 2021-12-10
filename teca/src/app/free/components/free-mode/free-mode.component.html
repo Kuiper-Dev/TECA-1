@@ -2,6 +2,7 @@
   <ion-row>
     <ion-col size="auto">
       <app-student-side-bar></app-student-side-bar>
+      <app-NotificationBar></app-NotificationBar>
     </ion-col>
     <ion-col>
       <app-free-panel (freePanelEvent)="newActivity($event)" *ngIf="visiblePanel"></app-free-panel>

@@ -5,6 +5,8 @@ import { CourseService } from '../../../../services/course.service';
 import { Activity } from '../../../../models/activity';
 import { TechniqueI } from '../../../../interfaces/technique-i';
 import { Router } from '@angular/router';
+import { messagePush } from 'src/app/models/menssagePush';
+import { NotificationPushService } from 'src/app/services/notification-push.service';
 @Component({
   selector: 'app-create-activity',
   templateUrl: './create-activity.component.html',
@@ -67,6 +69,7 @@ export class CreateActivityComponent implements OnInit {
       private navParams: NavParams
     , private popoverController: PopoverController
     , private courseService: CourseService
+    ,private messagingService: NotificationPushService
     , private route: Router) { }
 
   ngOnInit() {
@@ -91,11 +94,13 @@ export class CreateActivityComponent implements OnInit {
   }
 
   create(){
+    
     this.newActivity.technique=this.techniques;
     console.log(this.techniques);
     this.newActivity.courseId=this.courseData.courseId;
     this.courseService.createActivity(this.newActivity).then(res=>{
       console.log('Funcionó');
+      this.getKeysPush();
       this.popoverController.dismiss();
       this.route.navigate(['/cursos/actividades']);
     }).catch(err=>console.log(err));
@@ -104,5 +109,37 @@ export class CreateActivityComponent implements OnInit {
   cancel(){
     this.popoverController.dismiss();
   }
+
+
+  // ****************************Notificacion push ****************************************
+  sentMsj(keyPush) {
+    const mensaje = new messagePush();
+    mensaje.to = keyPush
+    mensaje.notification.title = "Nueva actividad"
+    mensaje.notification.body = this.courseData.subject +"   El Capítilo " +
+    this.chapterSelected.title +", "+
+    this.getTema(this.newActivity.themeId) + ". Indicaciones: "+
+  this.newActivity.indications
+    mensaje.data = null
+    this.messagingService.setMessges(mensaje)
+   }
+  
+   getTema(themeId){
+     var data  = this.chapterSelected.themes.find(i =>
+        i.themeId === themeId
+     )
+     return data.title
+   }
+  
+   getKeysPush(){
+    this.courseData.students.forEach(async (estudent)=>{
+       this.messagingService.getKeyPushOfuserUid(estudent.studentId).then(key=>{
+         this.sentMsj(key) 
+       })
+    })
+  }
+  
+  // ****************************Notificacion push ****************************************
+
 
 }

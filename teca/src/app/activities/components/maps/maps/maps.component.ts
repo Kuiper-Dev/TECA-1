@@ -2,6 +2,9 @@ import { Component, OnInit, Input } from '@angular/core';
 import { AlertController } from '@ionic/angular';
 import { ConceptualScheme } from 'src/app/activities/models/conceptual-scheme';
 import { MindScheme } from 'src/app/activities/models/mind-scheme';
+import { UserService } from 'src/app/auth/services/user.service';
+import { messagePush } from 'src/app/models/menssagePush';
+import { NotificationPushService } from 'src/app/services/notification-push.service';
 
 @Component({
   selector: 'app-maps',
@@ -17,7 +20,9 @@ export class MapsComponent implements OnInit {
   visibleMental = true;
   visibleConseptual = false;
 
-  constructor(public alertController: AlertController) { }
+  constructor(public alertController: AlertController
+    , private userService: UserService
+    ,private messagingService: NotificationPushService) { }
 
   ngOnInit() {
     this.displayActivity();
@@ -51,7 +56,7 @@ export class MapsComponent implements OnInit {
     });
 
     await alert.present();
-
+    this.enviarNotificacionP()
     const { role } = await alert.onDidDismiss();
     console.log('onDidDismiss resolved with role', role);
   }
@@ -68,4 +73,23 @@ export class MapsComponent implements OnInit {
       }
     }
   }
+
+
+  enviarNotificacionP() {
+    this.userService.getProfessorID().then(idP=>{
+      this.messagingService.getKeyPushOfuserUid(idP).then(key=>{
+        this.sentMsj(key) 
+      })
+    })
+  }
+  sentMsj(keyPush) {
+    const user = JSON.parse(localStorage.getItem('usuario'))
+    const mensaje = new messagePush();
+    mensaje.to = keyPush
+    mensaje.notification.title = "Entregar de atividad"
+    mensaje.notification.body = "El estudiante " +
+    user.name + " ha realizado la entrega de una actividad "
+    mensaje.data = null
+    this.messagingService.setMessges(mensaje)
+   }
 }

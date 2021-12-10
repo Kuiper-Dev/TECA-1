@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { UserService } from 'src/app/auth/services/user.service';
+import { messagePush } from 'src/app/models/menssagePush';
+import { NotificationPushService } from 'src/app/services/notification-push.service';
 
 @Component({
   selector: 'app-conceptual',
@@ -90,7 +93,8 @@ export class ConceptualComponent implements OnInit {
     },
   ];
 
-  constructor(){}
+  constructor(private userService: UserService
+    ,private messagingService: NotificationPushService){}
   
   ngOnInit() {}
 
@@ -134,4 +138,22 @@ export class ConceptualComponent implements OnInit {
   }
   generateItem(node:any){
   }
+
+  enviarNotificacionP() {
+    this.userService.getProfessorID().then(idP=>{
+      this.messagingService.getKeyPushOfuserUid(idP).then(key=>{
+        this.sentMsj(key) 
+      })
+    })
+  }
+  sentMsj(keyPush) {
+    const user = JSON.parse(localStorage.getItem('usuario'))
+    const mensaje = new messagePush();
+    mensaje.to = keyPush
+    mensaje.notification.title = "Entregar de atividad"
+    mensaje.notification.body = "El estudiante " +
+    user.name + " ha realizado la entrega de una actividad "
+    mensaje.data = null
+    this.messagingService.setMessges(mensaje)
+   }
 }

@@ -25,8 +25,15 @@ export class TreeComponent implements OnInit {
   };
 
   addSecondaryIdea(i: number){
+    this.primaryKey = false;
+    const newIdeados: TreeResponse={
+      id: this.mainIdeas.length+1,
+      principalIdea: 'Idea Secundaria',
+      leafs: [],
+    }
     if (this.mainIdeas[i].leafs.length<2){
-      this.mainIdeas[i].leafs.push('Idea secundaria');
+      this.mainIdeas[i].leafs.push(newIdeados);
+      console.log(this.mainIdeas);
     }
   }
 }

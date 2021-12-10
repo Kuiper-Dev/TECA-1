@@ -1,13 +1,13 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { User } from '../../../../../models/user';
 @Component({
-  selector: 'app-man-avatar',
-  templateUrl: './man-avatar.component.html',
-  styleUrls: ['./man-avatar.component.scss'],
+  selector: 'app-woman-avatar',
+  templateUrl: './avatar.component.html',
+  styleUrls: ['./avatar.component.scss'],
 })
-export class ManAvatarComponent implements OnInit {
+export class WomanAvatarComponent implements OnInit {
   @Input() comando: string;
-  @Output() newManEvent = new EventEmitter();
+  @Output() newWomanEvent = new EventEmitter();
   
   newUser = new User();
   
@@ -20,12 +20,12 @@ export class ManAvatarComponent implements OnInit {
   }
 
   create() {    
-    console.log('Esto es lo me llegó de password al local');
+    console.log('esto es lo que tengo guardado del password en local');
+    console.log(localStorage.getItem('password'));
     this.newUser.type='Docente';
     this.newUser.password=localStorage.getItem('password');
     localStorage.removeItem('password');
-    
-    this.newManEvent.emit(this.newUser);
+    this.newWomanEvent.emit(this.newUser);
   }
 
 }

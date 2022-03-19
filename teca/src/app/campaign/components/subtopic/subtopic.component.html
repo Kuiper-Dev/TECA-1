@@ -1,10 +1,12 @@
-<ion-grid>
+<ion-grid class="principal">
   <ion-row>
-    <ion-col size="auto">
+    <ion-col size="auto"  class="sidebar"style="padding: 0%;">
       <app-student-side-bar></app-student-side-bar>
+      <!--
       <app-NotificationBar></app-NotificationBar>
+      -->
     </ion-col>
-    <ion-col>
+    <ion-col style="padding: 0%" class="component">
       <app-themes-view [chapterData]="chapterId"  (themeViewEvent)=loadReading($event) *ngIf="visibleThemes"></app-themes-view>
       <app-reflective-reading [textReading]="themeSelected" (keywordsEvent)="loadKeywords($event)" *ngIf="visibleReading"></app-reflective-reading>
       <app-start-activity [keywordsActivity]="myKeywords" [activities]="themeSelected.activities" *ngIf="visibleActivity"(activityEvent)="goToActivity($event)"></app-start-activity>

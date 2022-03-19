@@ -1,5 +1,7 @@
 .principal {
-    margin-right: 50px;
+    //width: 81.47421875vw;
+    height: 100vh;
+    //margin-right: 50px;
 }
 .title {
     font-family: Muli;
@@ -15,16 +17,18 @@
 .title-content {
     margin-left: -40px;
     margin-top: 18px;
+
 }
 .keywords-component {
     margin-top: 15px;
-    margin-bottom: 39px;
+    margin-bottom: 19px;
 }
 .start-button {
-    width: 162px;
-    height: 53px;
+    width: 12.65625vw;
+    height: 6.625vh;
     color: #5570FF;
-    margin-top: 50px;
+    margin-top: 5px;
+    //margin-left: 67.39609375vw;
 }
 .start-button-label {
     font-family: Muli;
@@ -33,5 +37,6 @@
     font-size: 16px;
     line-height: 20px;
     letter-spacing: 0.01em;
+    text-transform: none;
     color: #FFFFFF;
 }

@@ -33,6 +33,7 @@
     "downloadjs": "^1.4.7",
     "firebase": "^8.2.5",
     "html-to-image": "^1.9.0",
+    "jshint": "^2.13.4",
     "native": "^0.3.3",
     "natives": "^1.1.6",
     "ng-circle-progress": "^1.6.0",

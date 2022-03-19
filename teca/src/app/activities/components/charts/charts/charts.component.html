@@ -1,11 +1,14 @@
 <ion-grid class="principal">
   <ion-row class="component">
-    <ion-col size="auto">
+    <ion-col size="auto" class="sidebar">
       <app-student-side-bar></app-student-side-bar>
+      <!--
       <app-NotificationBar></app-NotificationBar>
+      -->
     </ion-col>
     <ion-col>
       <app-activity-header [activityIndications]="activity.indications"></app-activity-header>
+
       <app-analogies *ngIf="visibleAnalogies" (analogyEvent)="saveResponse($event)"></app-analogies>
       <app-comparative *ngIf="visibleComparative" (comparativeEvent)="saveResponse($event)"></app-comparative>
       <app-synonyms *ngIf="visibleSynonyms"></app-synonyms>

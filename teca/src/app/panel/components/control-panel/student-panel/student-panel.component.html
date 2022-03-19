@@ -2,10 +2,14 @@
   <ion-row>
     <ion-col size="auto" class="sidebar">
       <app-student-side-bar></app-student-side-bar>
+      <!--
       <app-NotificationBar></app-NotificationBar>
+      -->
     </ion-col>
 
-    <ion-col class="dashboard">{{key}}</ion-col>
+    <ion-col class="dashboard">
+      <ion-img [src]="key" class="maqueta"></ion-img>
+    </ion-col>
 
     <ion-col size="auto" class="profilebar">
       <app-student-profile></app-student-profile>

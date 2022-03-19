@@ -1,6 +1,11 @@
+.principal{
+    width: 63.046875vw;
+    //height: 76.375vh;
+    height: auto;
+}
 .title{
     margin-left: 7.88046875vw;
-    margin-top: 123px;
+    margin-top: 15.375vh;
     font-family: Muli;
     font-style: normal;
     font-weight: bold;
@@ -26,20 +31,27 @@
     color: #334D6E;
 }
 .searchbar{
-    position: absolute;
     width: 42.5vw;
     height: 6.25vh;
     left: 7.88046875vw;
-    top: 292px;
+    //top: 36.5vh;  
+}
+/*.searchbar{
+    //position: absolute;
+    width: 42.5vw;
+    height: 6.25vh;
+    left: 7.88046875vw;
+    top: 36.5vh;
 
     background: #B2C0FC;
     border-radius: 10px;
-}
+}*/
 .box{
-    width: 518px;
-    height: 285px;
+    width: 40.46875vw;
+    //height: 66.625vh;
+    height: auto;
     margin-left: 128px;
-    margin-top: 80px;
+    //margin-top: 10vh;
   
     background: rgba(178, 192, 252, 0.5);
 }
@@ -48,7 +60,7 @@
 }
 .saveButton{
     margin-left: 732.87px;
-    margin-top: 58px;
+    //margin-top: 58px;
 }
 .item #addIcon {
     content: url('../../../../assets/icon/general/add.svg');

@@ -12,6 +12,7 @@ import { StudentsService } from '../../../services/students.service';
 export class GeneralTableComponent implements OnInit {
   searchtext='';
   columns: string[] =['nombre', 'grado', 'email','rendimiento', 'editar'];
+  
   studentsList: any =[];
   @ViewChild(MatTable) tabla1: MatTable<any>;
   constructor(public popoverController: PopoverController, private studentsService:StudentsService) { }

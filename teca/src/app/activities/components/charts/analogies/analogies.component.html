@@ -1,44 +1,83 @@
 <ion-grid class="principal">
   <ion-content class="content">
-    <ion-row style="height: 100%; justify-content: center">    
-    <div class="analogyView" id="pngNode">
-      <ion-row  *ngFor="let analogy of activityResponse.responses ; let i = index">
-        <div  class="box" style="position: relative">
-            
-          <ion-fab vertical="bottom" horizontal="end" style="right: 10px; bottom: -10px">
-            <ion-fab-button class="add-button" (click)="addAnalogie()">
-              <ion-icon style="color:white; padding: 0px;font-size: 20px;" name="add"></ion-icon>
-            </ion-fab-button>
-          </ion-fab>
-              
-          <ion-row class="analogyRow">
-            <ion-col class="analogyBox">
-              <ion-row >
-                <div>
-                  <ion-textarea [(ngModel)]="this.activityResponse.responses[i].premise" class="analogie-input"></ion-textarea>
-                </div>
-              </ion-row>
-            </ion-col>
+    <ion-row style="height: 100%; justify-content: center">
+      <div class="analogyView" id="pngNode">
+        <ion-row  *ngFor="let analogy of activityResponse.responses ; let i = index">
+          <div  class="box" style="position: relative">
+            <ion-fab vertical="bottom" horizontal="end" style="right: 10px; bottom: -10px">
+              <ion-fab-button class="add-button" (click)="addAnalogie()">
+                <ion-icon style="color:white; padding: 0px;font-size: 20px;" name="add"></ion-icon>
+              </ion-fab-button>
+            </ion-fab>
+            <ion-row class="analogyRow">
+              <ion-col class="analogyBox">
+                <ion-row >
+                  <div>
+                    <ion-textarea [(ngModel)]="this.activityResponse.responses[i].premise1" class="analogie-input"></ion-textarea>
+                  </div>
+                </ion-row>
+              </ion-col>
 
-            <ion-col size="fixed" class="analogyEqual">
-              <ion-row>
+              <ion-col size="fixed" class="analogyEqual">
+                <ion-row>
                   <ion-fab-button class="equal">
+                    <!--
                     <ion-icon src="assets/icon/activities/equal.svg" style="color:white;width: 20px;height: 15px;"></ion-icon>
+                    -->
+                    :
                   </ion-fab-button>
-              </ion-row>
-            </ion-col>  
+                </ion-row>
+              </ion-col>  
             
-            <ion-col class="analogyBox"> 
-              <ion-row >
-                <div>
-                  <ion-textarea [(ngModel)]="this.activityResponse.responses[i].alternative" class="analogie-input"></ion-textarea>
-                </div>
-              </ion-row>
-            </ion-col>
-          </ion-row>
-        </div>
-      </ion-row>
-    </div>
-  </ion-row>
+              <ion-col class="analogyBox"> 
+                <ion-row >
+                  <div>
+                    <ion-textarea [(ngModel)]="this.activityResponse.responses[i].alternative1" class="analogie-input"></ion-textarea>
+                  </div>
+                </ion-row>
+              </ion-col>
+
+              <ion-col size="fixed" class="analogyEqual">
+                <ion-row>
+                  <ion-fab-button class="equal">
+                    <!--
+                    <ion-icon src="assets/icon/activities/equal.svg" style="color:white;width: 20px;height: 15px;"></ion-icon>
+                    -->
+                    ::
+                  </ion-fab-button>
+                </ion-row>
+              </ion-col> 
+
+              <ion-col class="analogyBox"> 
+                <ion-row >
+                  <div>
+                    <ion-textarea [(ngModel)]="this.activityResponse.responses[i].premise2" class="analogie-input"></ion-textarea>
+                  </div>
+                </ion-row>
+              </ion-col>
+
+              <ion-col size="fixed" class="analogyEqual">
+                <ion-row>
+                  <ion-fab-button class="equal">
+                    <!--
+                    <ion-icon src="assets/icon/activities/equal.svg" style="color:white;width: 20px;height: 15px;"></ion-icon>
+                    -->
+                    :
+                  </ion-fab-button>
+                </ion-row>
+              </ion-col> 
+
+              <ion-col class="analogyBox"> 
+                <ion-row >
+                  <div>
+                    <ion-textarea [(ngModel)]="this.activityResponse.responses[i].alternative2" class="analogie-input"></ion-textarea>
+                  </div>
+                </ion-row>
+              </ion-col>
+            </ion-row>
+          </div>
+        </ion-row>
+      </div>
+    </ion-row>
   </ion-content>
 </ion-grid>

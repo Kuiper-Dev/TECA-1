@@ -10,7 +10,8 @@
 }
 .title-content {
     margin-bottom: 30px;    
-    margin-top: 20px;  
+    margin-top: 4.875vh;  
+    margin-left: 8.50546875vw;
 }
 .ruta{
     margin-left: 340px;
@@ -40,10 +41,13 @@
 .indications-content{
     width: 438px;
     //margin-left: 338px;
+    margin-left: 8.50546875vw;
+
 }
 .indications-title {
     width: 142px;
     height: 29px;
+
     font-family: Muli;
     font-style: normal;
     font-weight: bold;
@@ -63,10 +67,11 @@
     color: #334D6E;
 }
 .reading-content {
-    width: 663px;
-    height: 451px;
+    width: 563px;
+    height: 351px;
     //margin-left: 409px;
     margin-top: 25px;
+    margin-left: 13.42734375vw;
 }
 .reading {
     font-family: Muli;
@@ -142,7 +147,7 @@
     height: 53px;
     right: 40px;
     //left: 1077px;
-    top: 610px;
+    top: 560px;
     bottom: 30px;
     color: #5570FF;
 }

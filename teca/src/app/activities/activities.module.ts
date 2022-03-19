@@ -20,6 +20,7 @@ import { KeyComponent } from './components/schemes/key/key.component';
 import { IdeasSecundaryComponent } from './shared/ideas-secundary/ideas-secundary.component'
 import { ExpandComponent } from './shared/expand/expand.component';
 
+
 @NgModule({
   declarations: [
     AnalogiesComponent

@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { Scores } from 'src/app/scores/models/scores';
+
+import { MatTable } from '@angular/material/table';
 
 @Component({
   selector: 'app-score-table',
@@ -6,14 +9,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./score-table.component.scss'],
 })
 export class ScoreTableComponent implements OnInit {
+  columnas: string[] = ['nombre','analogias', 'sinonimos', 'cuadros', 'mnemotecnias','llaves','arbol', 'sangrado', 'mental', 'conceptual'];
   searchtext='';
-  scoresList=[
-    {name:'Alfredo Marrero',analogias:100,cuadroCompratativo:100,esquemaArbol:100, esquemaSangrado:95, mnemotecnicas:97, sinonimosAntonimos:100,esquemaLlaves:94,mapaMental:80,mapaConceptual:99}
-  , {name:'Nikki Lauda',analogias:85,cuadroCompratativo:100,esquemaArbol:100,esquemaSangrado:95, mnemotecnicas:100, sinonimosAntonimos:100,esquemaLlaves:94,mapaMental:80,mapaConceptual:68}
-  , {name:'Valteri Bottas',analogias:100,cuadroCompratativo:80,esquemaArbol:90, esquemaSangrado:95,mnemotecnicas:97, sinonimosAntonimos:100,esquemaLlaves:94,mapaMental:85,mapaConceptual:78}
-  , {name:'Charles Le Clerc',analogias:100,cuadroCompratativo:100,esquemaArbol:100, esquemaSangrado:95, mnemotecnicas:97, sinonimosAntonimos:100,esquemaLlaves:94,mapaMental:82,mapaConceptual:45}
-  , {name:'Max Verstappen',analogias:100,cuadroCompratativo:100,esquemaArbol:100, esquemaSangrado:100,mnemotecnicas:100, sinonimosAntonimos:100,esquemaLlaves:94,mapaMental:81,mapaConceptual:75}
-  , {name:'Fernando Alonso',analogias:100,cuadroCompratativo:100,esquemaArbol:100, esquemaSangrado:100, mnemotecnicas:100, sinonimosAntonimos:100,esquemaLlaves:94,mapaMental:80,mapaConceptual:85}];
+  scoresList:Scores[]=[
+    new Scores('','','Alfredo Marrero', 'Logrado', 'Logrado','Logrado', 'Pendiente', 'Pendiente', 'Logrado', 'Pendiente', 'Logrado')
+  , new Scores('','','Nikki Lauda','Logrado','Logrado','Logrado','Pendiente','Pendiente','Logrado','Pendiente','No Logrado','Logrado')
+  ,new Scores('','','Valteri Bottas','Logrado','Logrado','Logrado','Pendiente','Pendiente','Logrado','Pendiente','No Logrado','Logrado')
+  , new Scores('','','Charles Le Clerc','Logrado','Logrado','Logrado', 'Pendiente', 'Pendiente', 'Logrado','Pendiente','No Logrado','Logrado')
+  , new Scores('','','Max Verstappen','Logrado','Logrado','Logrado', 'Pendiente', 'Pendiente', 'Logrado','Pendiente','No Logrado','Logrado')
+  ,new Scores('','','Fernando Alonso','Logrado','Logrado','Logrado', 'Pendiente', 'Pendiente', 'Logrado','Pendiente','No Logrado','Logrado')];
+  @ViewChild(MatTable) tabla1: MatTable<Scores>;
   constructor() { }
 
   ngOnInit() {}

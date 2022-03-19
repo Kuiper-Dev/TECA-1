@@ -16,35 +16,46 @@
       </ion-col>
     </ion-row>
     <ion-row class="courses">
-      <ion-list>
-        <ion-row >
+      <ion-list style="background: #E5E5E5;" >
+        <ion-row style="background: #E5E5E5;" >
           <div *ngFor="let subject of cursos; let i = index">
             <ion-card  *ngIf="i%4==0"  style="background:#2ED47A;" class="card" (click)="openCourseDetail(subject)">
               <ion-card-content>
                 <ion-icon slot="start" class="card-icon" src="{{subject.image}}"></ion-icon>
                 <ion-card-title class="card-title">{{subject.subject}}</ion-card-title>
-                <ion-label class="card-subtitle">{{subject.description}}</ion-label>
+                <ion-card-subtitle style="color: #FFFFFF;margin-left: auto; margin-right: auto; width: auto; text-align: center;">Martes en la tarde</ion-card-subtitle>
+                <ion-row class="ion-text-center">
+                <ion-label class="card-subtitle">Compartido con {{subject.students[0].name}} y {{subject.students.length-1}} personas más </ion-label>
+                </ion-row>
+                
               </ion-card-content>
             </ion-card>
             <ion-card *ngIf="i%4==1" style="background:#F7685B;" class="card" (click)="openCourseDetail(subject)">
               <ion-card-content>
                 <ion-icon slot="start" class="card-icon" src="{{subject.image}}"></ion-icon>
                 <ion-card-title class="card-title">{{subject.subject}}</ion-card-title>
-                <ion-label class="card-subtitle">{{subject.description}}</ion-label>
+                <ion-card-subtitle style="color: #FFFFFF;margin-left: auto; margin-right: auto; width: auto; text-align: center;">Martes en la tarde</ion-card-subtitle>
+                <ion-row class="ion-text-center">
+                  <ion-label class="card-subtitle">Compartido con {{subject.students[0].name}} y {{subject.students.length-1}} personas más </ion-label>
+                  </ion-row>
               </ion-card-content>
             </ion-card>
             <ion-card *ngIf="i%4==2" style="background:#FFB946;" class="card" (click)="openCourseDetail(subject)">
               <ion-card-content>
                 <ion-icon slot="start" class="card-icon" src="{{subject.image}}"></ion-icon>
                 <ion-card-title class="card-title">{{subject.subject}}</ion-card-title>
-                <ion-label class="card-subtitle">{{subject.description}}</ion-label>
+                <ion-row class="ion-text-center">
+                  <ion-label class="card-subtitle">Compartido con {{subject.students[0].name}} y {{subject.students.length-1}} personas más </ion-label>
+                  </ion-row>
               </ion-card-content>
             </ion-card>
             <ion-card *ngIf="i%4==3" style="background:#885AF8;" class="card" (click)="openCourseDetail(subject)">
               <ion-card-content>
                 <ion-icon slot="start" class="card-icon" src="{{subject.image}}"></ion-icon>
                 <ion-card-title class="card-title">{{subject.subject}}</ion-card-title>
-                <ion-label class="card-subtitle">{{subject.description}}</ion-label>
+                <ion-row class="ion-text-center">
+                  <ion-label class="card-subtitle">Compartido con {{subject.students[0].name}} y {{subject.students.length-1}} personas más </ion-label>
+                  </ion-row>
               </ion-card-content>
             </ion-card>
           </div>

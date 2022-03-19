@@ -12,8 +12,10 @@ export class AnalogyComponent implements OnInit {
   Analogies = [
     {
       id: 0,
-      premise:"",
-      alternative:"",
+      premise1:"",
+      alternative1:"",
+      premise2:"",
+      alternative2:"",
     }
   ];
   addAnalogie() {
@@ -21,7 +23,7 @@ export class AnalogyComponent implements OnInit {
       this.presentAlert();
     }
     else{
-      let newItem = {id: this.activityResponse.responses.length, premise:"", alternative: ""};
+      let newItem = {id: this.activityResponse.responses.length, premise1:"", alternative1: "", premise2:"", alternative2: ""};
       //this.Analogies.push(newItem);
       //console.log(this.Analogies);
       console.log('ActivityResponse');
@@ -33,13 +35,13 @@ export class AnalogyComponent implements OnInit {
   constructor(public alertController: AlertController) { }
 
   ngOnInit() {
-    let newItem = {id: this.activityResponse.responses.length, premise:"", alternative: ""};
+    let newItem = {id: this.activityResponse.responses.length, premise1:"", alternative1: "", premise2:"", alternative2: ""};
     this.activityResponse.responses.push(newItem);
   }
 
   isEmpty(){
     for (let i = 0; i < this.Analogies.length; i++) {
-      if( this.activityResponse.responses[i].premise===""|| this.activityResponse.responses[i].alternative==="" ){
+      if( this.activityResponse.responses[i].premise1===""|| this.activityResponse.responses[i].alternative1===""){
         return true;
       }
     }

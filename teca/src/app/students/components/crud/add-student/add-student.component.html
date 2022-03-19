@@ -16,7 +16,9 @@
         <div *ngFor="let student of studentsList"  slot="fixed">
           <ion-row>
             <ion-item lines="none" (click)="addMyStudent(student)" >
-              <ion-icon id="addIcon"></ion-icon>
+              <ion-button shape="round">
+                <ion-icon id="addIcon"></ion-icon>
+              </ion-button>
               <ion-label>{{student.name}}</ion-label>
             </ion-item>
           </ion-row>

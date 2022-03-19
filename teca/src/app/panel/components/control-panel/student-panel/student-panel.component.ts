@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./student-panel.component.scss'],
 })
 export class StudentPanelComponent implements OnInit {
-  key = "no tiene "
+  key = "assets/svg/dashboard/maqueta.svg"
   constructor() { }
 
   ngOnInit() {

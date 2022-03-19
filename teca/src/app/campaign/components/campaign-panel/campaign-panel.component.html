@@ -19,7 +19,7 @@
   </ion-row>
   <ion-row>
     <ion-col size="6" *ngFor="let practice of courseInformation.chapters ; let i = index">
-      <ion-item class="item" lines="none">
+      <ion-item  lines="none" style="margin-left: 8.27109375vw;">
         <ion-row>
           <svg height="70" width="70" (click)="goToSubthemes(practice.chapterId)">
               <circle cx="35" cy="35" r="35" stroke-width="0" [ngClass]="{'first-circle':i%4==0, 'second-circle':i%4==1, 'third-circle':i%4==2, 'fourth-circle':i%4==3}"/>

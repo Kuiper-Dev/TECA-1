@@ -39,6 +39,7 @@ export class CampaignPanelComponent implements OnInit {
    this.campaignService.getCampaignCourses(localStorage.getItem('token')).then(res=>{
      this.campaignData = res.data() as Campaign;
      this.subjects= this.campaignData.courses;
+     console.log(this.subjects);
      this.getChapters(this.subjects[0].courseId);
    })
   }

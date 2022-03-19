@@ -1,15 +1,27 @@
 .principal{
+    width: 100vw;
+    height: 100vh;
     padding: 0px;
 }
 .sidebar{
+    width: 18.52578125vw;
+    height: 100vh;
     padding: 0px;
 }
 .dashboard{
     width: 59.2085938vw;
+    height: 100vh;
     padding: 0px;
     //margin-left: 0vw;
     //margin-right: 0vw;
 }
 .profilebar{
+    height: 100vh;
     padding: 0px;
+}
+.maqueta{
+   width: 49.53125vw;
+   height: 80.375vh; 
+   margin-left: 7.96875vw;
+   margin-top: 5.125vh;
 }

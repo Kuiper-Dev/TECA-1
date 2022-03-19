@@ -1,19 +1,12 @@
-<ion-grid>
-  <ion-row></ion-row>
-  <ion-row>
-    <ion-label class="title">Activar Cursos</ion-label>
-  </ion-row>
-  <ion-row>
-    <ion-label class="question">Para continuar debes indicar el grupo o los estudiantes con quienes quieres compartir los cursos seleccionados.</ion-label>
-  </ion-row>
-
+<ion-grid class="principal">
   <ion-row>
     <ion-label class="share-txt">Compartir con:</ion-label>
   </ion-row>
   <ion-row>
-    <ion-searchbar no-border color="none" fill="clear" lines="none" placeholder="Introduce nombres o grupos" class="searchbar" ></ion-searchbar>
+    <ion-col>
+      <ion-searchbar no-border color="none" fill="clear" lines="none" placeholder="Introduce nombres o grupos" class="searchbar"></ion-searchbar>
+    </ion-col>
   </ion-row>
-
   <ion-row class="box">
     <ion-col>
       <ion-item color="none" *ngFor="let student of students" lines="none">
@@ -23,7 +16,7 @@
       <ion-label>{{student.name}}</ion-label>
     </ion-item>
     </ion-col>
-    
+ 
   </ion-row>
 
   <ion-row>

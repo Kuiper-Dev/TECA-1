@@ -1,6 +1,6 @@
 .principal{
-    width: 18,5257812vw;
-    height: 100%;
+    width: 18.5257812vw;
+    height: 100vh;
     background: #5570FF;
     padding: 0px;
 }
@@ -26,13 +26,20 @@
 }
 
 .settings{
-    margin-top:47vh;   
+    margin-top:37.5vh;   
 }
 
 .settings:hover{
     color: #FFFFFF;
 }
+.settingsText{
+    font-family: Muli;
+    color:#FFFFFF
+}
 
+.settingsText:hover{
+    color:#6F9CD6;
+}
 .item #dashboardIcon {
    content: url('../../../../../assets/icon/sidebar/dashboard.svg');
 }
@@ -48,6 +55,9 @@
 }
 
 .item #settingsIcon {
+    content: url("../../../../../assets/icon/sidebar/settings.svg");
+}
+.item #settingsIcon:hover {
     content: url("../../../../../assets/icon/sidebar/settingsColor.svg");
 }
 
@@ -62,6 +72,9 @@
 }
 .item ion-item:hover #puntajeIcon, .itemSelect #puntajeIcon {
     content: url("../../../../../assets/icon/sidebar/puntaje.svg");
+}
+.item ion-item:hover #settingsIcon, .itemSelect #settingsIcon {
+    content: url("../../../../../assets/icon/sidebar/settingsColor.svg");
 }
 
 

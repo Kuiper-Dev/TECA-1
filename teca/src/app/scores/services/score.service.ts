@@ -15,14 +15,14 @@ export class ScoreService {
         professorId:scores.professorId,
         name:scores.name,
         analogias: scores.analogias,
-        cuadroCompratativo: scores.cuadroCompratativo,
-        esquemaArbol:scores.esquemaArbol,
-        esquemaSangrado:scores.esquemaSangrado,
-        mnemotecnicas:scores.mnemotecnicas,
-        sinonimosAntonimos:scores.sinonimosAntonimos,
-        esquemaLlaves:scores.esquemaLlaves,
-        mapaMental:scores.mapaMental,
-        mapaConceptual:scores.mapaConceptual
+        cuadroCompratativo: scores.cuadros,
+        esquemaArbol:scores.arbol,
+        esquemaSangrado:scores.sangrado,
+        mnemotecnicas:scores.mnemotecnias,
+        sinonimosAntonimos:scores.sinonimos,
+        esquemaLlaves:scores.llaves,
+        mapaMental:scores.mental,
+        mapaConceptual:scores.conceptual
 
       }).then(res=>{
         resolve(res);
